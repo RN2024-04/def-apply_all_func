@@ -1,0 +1,14 @@
+def apply_all_func(int_list, *functions):
+    key1=[]
+    val=[]
+    results={}
+    val.append(int_list)
+    for i in functions:
+        key1.append(i)
+
+    results=dict(zip(key1,val))
+    return results
+
+
+print(apply_all_func([6, 20, 15, 9],  max.__name__, min.__name__))
+print(apply_all_func([6, 20, 15, 9], len.__name__, sum.__name__, sorted.__name__))
